@@ -1,6 +1,6 @@
 [user]
-  name = Ben Alman
-  email = EMAIL
+  name = Kyle Lieber
+  email = klieberuni@gmail.com
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
@@ -19,6 +19,7 @@
   rv = review
   st = status
   ksdiff = difftool -y -t Kaleidoscope
+  graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 [branch "master"]
   remote = origin
   merge = refs/heads/master
@@ -39,8 +40,7 @@
   untracked = cyan
 [merge]
   log = true
-[difftool "Kaleidoscope"]
-  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+  tool = kdiff3
 [rerere]
   enabled = 1
 [url "git@github.com:"]
@@ -57,3 +57,9 @@
   insteadOf = "gist:"
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
+[github]
+  user = klieber
+[credential]
+  helper = cache --timeout=14400
+[push]
+  default = matching
